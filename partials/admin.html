@@ -1,0 +1,48 @@
+
+<div class="row">
+	<div class="col-md-8">
+		<!-- <h4>Create Process </h4> -->
+
+     <div class="panel panel-primary">
+			  <div class="panel-heading">Create Process </div>
+			  <div class="panel-body">
+
+		<form novalidate="novalidate" class="form-horizontal">
+		<div>
+			<div class="control-group">
+
+				<label class="control-label" >Priority:</label>
+				  <input id="in" type="text"  ng-model="priority" ng-init="priority='High'"  class="search-query input-medium">
+
+			</div>
+			<div class="control-group">
+				<label class="control-label" >Model Number:</label>
+				  <input id="in" type="text"  ng-model="modelNumber" ng-init="modelNumber='123'" class="search-query input-medium">
+
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="quantity">Quantity:</label>
+
+				  <input id="in" type="text"  ng-model="quantity" ng-init="quantity='64'" class="search-query input-medium">
+
+			</div>
+
+			  <button id="showDetail" type="button" class="btn btn-success btn-sm" ng-click="CreateProcess()">
+								<span class="glyphicon"></span> Create
+	          </button>
+
+	      </div>
+
+
+
+		</form>
+		</div>
+
+		  <div class="panel-footer">
+		     <h5> <span ng-show='procCreate.show' class="label label-default"> Created Successfully </span></h5>
+
+		   </div>
+        </div>
+
+	</div>
+</div>

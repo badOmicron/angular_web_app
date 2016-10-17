@@ -1,0 +1,76 @@
+
+<div class="col-md-9" id="main" >
+   <!-- <h2 id="hdr">User Tasks</h2> -->
+	
+	 <div class="panel panel-primary">
+			  <div class="panel-heading">User Tasks</div>
+			  <div class="panel-body">
+				<form id="myForm" class="form-inline" style="padding-right: 10px">
+					<label>User				   
+						<select ng-model="user" class="input-small">   
+							<option value="krisv" selected>Kris</option>
+							<option value="john">John</option>						  
+						</select>
+					</label>
+				  
+				   <button id="showDetail" type="button" class="btn btn-success btn-sm" ng-click="doSearchTasks()">
+											<span class="glyphicon glyphicon-search"></span> Search
+				   </button>
+				
+		      
+				 <table class="table table-hover table-striped table-condensed table-bordered ordersTable" ng-show='tskState.show' >
+				
+					<thead>
+					<tr>
+						<th >Id</th>
+						<th >Name</th>
+						<th >status</th>
+						<th >Owned By</th>
+						<th >Process ID</th>
+						<th >Task Action</th>
+
+					 </tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="recs in taskresults">
+							<td>{{ recs.id }}</td>
+							<td>{{ recs.name }}</td>
+							<td>{{ recs.status }}</td>
+							<td>{{ recs.owner }}</td>
+							<td>{{ recs.processId }}</td>
+				             <td><a ng-click="taskWork(recs.processId,recs.id)" class="btn btn-small btn-success">Work on Task</a></td>
+						</tr>
+					</tbody>
+				</table>
+              </form>				
+            </div>
+		</div>  
+
+	   <form novalidate="novalidate" ng-show="taskDet" > 
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Task Parameters</div>
+			  <div class="panel-body">		  
+				   <div class="control-group">
+						<label class="control-label" >Process Id:</label>
+						  <input id="in" type="text" disabled="true" ng-model="tastdetId" />	
+					</div>
+					<div class="control-group">
+						<label class="control-label" >Priority:</label>
+						  <input id="in" type="text"  ng-model="priority" />	
+					</div>
+					<div class="control-group">
+						<label class="control-label" >Model Number:</label>
+						  <input id="in" type="text"  ng-model="modelNumber" />			
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="quantity">Quantity:</label>             
+						  <input id="in" type="text"  ng-model="quantity" />			
+					</div>		
+					  <button id="showDetail" type="button" class="btn btn-success btn-sm" ng-click="CompleteTask(priority,modelNumber,quantity)">
+										<span class="glyphicon"></span> Complete Task
+					  </button>	
+					</div>
+				</div>			  	   
+       </form>	
+  
+ </div>  
